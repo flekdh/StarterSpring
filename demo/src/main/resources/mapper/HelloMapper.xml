@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="HelloMapper">
+
+	<select id="selectUserList" parameterType="Map" resultType="Map">
+		/* 사용자 조회 HelloMapper.selectUserList */
+		SELECT U.ID, U.NAME, U.TEL_NO, S.SOSOK, S.SOSOK_NAME, S.ZIPCODE, S.ZIPNAME 
+		  FROM DEMO_USERM U, DEMO_SOSOKM S
+		 WHERE U.SOSOK = S.SOSOK(+)
+	</select>
+	
+</mapper>
